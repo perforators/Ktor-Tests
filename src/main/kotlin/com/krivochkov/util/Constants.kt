@@ -1,4 +1,4 @@
 package com.krivochkov.util
 
-const val dbName = "tests"
-const val testCollection = "psychological_tests"
+const val DB_NAME = "tests"
+const val TEST_COLLECTION = "psychological_tests"

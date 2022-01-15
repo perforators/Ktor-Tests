@@ -1,16 +1,15 @@
 package com.krivochkov.data
 
 import com.krivochkov.data.models.Test
-import com.krivochkov.util.testCollection
+import com.krivochkov.util.TEST_COLLECTION
 import org.litote.kmongo.coroutine.CoroutineDatabase
-import org.litote.kmongo.coroutine.insertOne
 import org.litote.kmongo.eq
 
 class TestRepositoryImpl(
     database: CoroutineDatabase
 ): TestRepository {
 
-    private val tests = database.getCollection<Test>(testCollection)
+    private val tests = database.getCollection<Test>(TEST_COLLECTION)
 
     override suspend fun getTest(id: String): Test? {
         return tests.findOne(Test::id eq id)
