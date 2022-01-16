@@ -5,5 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Question(
     val question: String,
-    val answers: List<Answer>
+    val isPicture: Boolean,
+    val answers: List<Answer>,
+    val answersIsPictures: Boolean
 )
