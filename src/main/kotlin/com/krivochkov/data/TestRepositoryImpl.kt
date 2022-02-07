@@ -1,5 +1,6 @@
 package com.krivochkov.data
 
+import com.krivochkov.data.models.ShortTestInfo
 import com.krivochkov.data.models.Test
 import com.krivochkov.util.TEST_COLLECTION
 import org.litote.kmongo.coroutine.CoroutineDatabase
@@ -17,5 +18,9 @@ class TestRepositoryImpl(
 
     override suspend fun postTest(test: Test) {
         tests.insertOne(test)
+    }
+
+    override suspend fun getAllShortInfoTests(): List<ShortTestInfo> {
+        return tests.find().toList().map { it.toShortTestInfo() }
     }
 }

@@ -7,5 +7,4 @@ data class Question(
     val question: String,
     val isPicture: Boolean,
     val answers: List<Answer>,
-    val answersIsPictures: Boolean
 )

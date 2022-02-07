@@ -8,7 +8,7 @@ import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 
-fun Route.testsRouting(testRepository: TestRepository) {
+fun Route.testRouting(testRepository: TestRepository) {
 
     route("/test") {
         get("{id}") {
@@ -24,6 +24,15 @@ fun Route.testsRouting(testRepository: TestRepository) {
 
             call.respond(
                 message = test,
+                status = HttpStatusCode.OK
+            )
+        }
+
+        get("/allTests/shortInfo") {
+            val allTests = testRepository.getAllShortInfoTests()
+
+            call.respond(
+                message = allTests,
                 status = HttpStatusCode.OK
             )
         }

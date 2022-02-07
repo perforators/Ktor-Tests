@@ -9,6 +9,14 @@ data class Test(
     @BsonId
     val id: String = ObjectId().toString(),
     val name: String,
+    val link: String,
     val questions: List<Question>,
     val results: List<Result>
-)
+) {
+
+    fun toShortTestInfo() = ShortTestInfo(
+        id = id,
+        name = name,
+        link = link
+    )
+}

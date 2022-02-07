@@ -4,8 +4,6 @@ val logback_version: String by project
 val kmongo_version: String by project
 val koin_version: String by project
 
-
-
 plugins {
     application
     kotlin("jvm") version "1.6.10"
