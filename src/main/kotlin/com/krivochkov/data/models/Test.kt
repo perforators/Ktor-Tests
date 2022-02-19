@@ -9,6 +9,7 @@ data class Test(
     @BsonId
     val id: String = ObjectId().toString(),
     val name: String,
+    val isVerified: Boolean = false,
     val link: String,
     val questions: List<Question>,
     val results: List<Result>
